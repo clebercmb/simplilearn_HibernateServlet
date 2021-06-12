@@ -30,7 +30,7 @@
                 </ul>
                 <div class="text-end">
                     <a href="<%=request.getContextPath()%>/logout" type="button" class="btn btn-outline-light me-2">Logout</a>
-                    
+
 
                 </div>
             </div>
