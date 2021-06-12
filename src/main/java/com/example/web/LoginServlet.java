@@ -21,27 +21,27 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         System.out.println("You clicked me");
+        PrintWriter out = response.getWriter();
+        response.setContentType("text/html");
+        RequestDispatcher dispatcher = null;
+
         String userName = request.getParameter("username");
         String passWord = request.getParameter("password");
 
-        PrintWriter out = response.getWriter();
-
         if(userDao.validate(userName, passWord)) {
-            RequestDispatcher dispatcher = request.getRequestDispatcher("login-success.jsp");
+            System.out.println(">>>> Login validated!!");
+            HttpSession session = request.getSession();
+            session.setAttribute("username", userName);
+
+            dispatcher = request.getRequestDispatcher("dashboard.jsp");
             dispatcher.forward(request, response);
         } else {
-            RequestDispatcher dispatcher = request.getRequestDispatcher("login-success.jsp");
+            dispatcher = request.getRequestDispatcher("login.jsp");
             dispatcher.include(request, response);
             out.println("<h3 style='color:red'>Login Failed.. Tray Again</h3>");
         }
 
-        //User user = new User();
-        //user.setFirstName("Tom");
-        //user.setLastName("Jerry");
-        //user.setPassword("123");
-        //user.setUsername("tom");
 
-        //userDao.save(user);
 
     }
 

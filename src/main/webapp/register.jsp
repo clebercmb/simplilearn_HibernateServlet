@@ -16,24 +16,20 @@
     <h1>Register Form</h1>
     <form action="<%=request.getContextPath()%>/register" method="post">
         <div class="form-group">
-            <label for="firstName">First Name:</label> <input type="text"
-                                                              class="form-control" id="first_name" placeholder="First Name"
-                                                              name="firstName" required>
+            <label for="firstName">First Name:</label>
+            <input type="text" class="form-control" id="first_name" placeholder="First Name" name="firstName" required>
         </div>
         <div class="form-group">
-            <label for="last_name">Last Name:</label> <input type="text"
-                                                             class="form-control" id="last_name" placeholder="Last Name"
-                                                             name="username" required>
+            <label for="last_name">Last Name:</label>
+            <input type="text" class="form-control" id="last_name" placeholder="Last Name" name="lastName" required>
         </div>
         <div class="form-group">
-            <label for="user_name">User Name:</label> <input type="text"
-                                                             class="form-control" id="user_name" placeholder="User Name"
-                                                             name="username" required>
+            <label for="user_name">User Name:</label>
+            <input type="text" class="form-control" id="user_name" placeholder="User Name" name="userName" required>
         </div>
         <div class="form-group">
-            <label for="password">Password:</label> <input type="password"
-                                                           class="form-control" id="password" placeholder="Password"
-                                                           name="password" required>
+            <label for="password">Password:</label>
+            <input type="password" class="form-control" id="password" placeholder="Password" name="password" required>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
